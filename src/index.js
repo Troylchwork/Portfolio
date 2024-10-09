@@ -1,7 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, HashRouter } from "react-router-dom";
-import { MobileView, BrowserView } from "react-device-detect";
+import { HashRouter } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import "./index.css";
 import App from "./App";
@@ -23,17 +22,15 @@ const customTheme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Suspense fallback="loading">
-        <HashRouter>
-            <I18nextProvider i18n={i18n} defaultNS={"translation"}>
-                <ThemeProvider theme={customTheme}>
-                    <AlertProvider>
-                        <App />
-                    </AlertProvider>
-                </ThemeProvider>
-            </I18nextProvider>
-        </HashRouter>
-    </Suspense>
+    <HashRouter>
+        <I18nextProvider i18n={i18n} defaultNS={"translation"}>
+            <ThemeProvider theme={customTheme}>
+                <AlertProvider>
+                    <App />
+                </AlertProvider>
+            </ThemeProvider>
+        </I18nextProvider>
+    </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
