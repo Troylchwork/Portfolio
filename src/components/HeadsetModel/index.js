@@ -6,7 +6,7 @@ import * as THREE from "three";
 import { easing } from "maath";
 const Model = (props) => {
     const mesh = useRef();
-    const { scene } = useGLTF("blender.glb");
+    const { scene } = useGLTF("./blender.glb");
     const [dummy] = useState(() => new THREE.Object3D());
     const mousePosition = useRef({ x: 0, y: 0 });
 
