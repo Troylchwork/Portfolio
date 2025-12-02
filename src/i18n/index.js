@@ -6,19 +6,18 @@ import en from "./locales/en";
 import zh from "./locales/zh";
 
 i18n.use(initReactI18next)
-    // .use(LanguageDetector)
-    // .use(Backend)
+    .use(LanguageDetector)
     .init({
-        lng: 'en',
-        fallbackLng: "zh",
         resources: {
             en: { translation: en },
-            "zh-HK": { translations: zh },
-            "zh-TW": { translations: zh },
-            zh: { translations: zh },
+            zh: { translation: zh },
+            "zh-HK": { translation: zh },
+            "zh-TW": { translation: zh },
         },
+        fallbackLng: "en",
         debug: true,
-        defaultNs: "translations",
+        ns: ["translation"],
+        defaultNs: "translation",
     });
 
 export default i18n;

@@ -9,8 +9,8 @@ export default function GameSystem() {
     return (
         <Background>
             <Stack sx={{ margin: "20px" }}>
-                <h1>GameSystem</h1>
-                <CustomeBreadcrumbs name="GameSystem" />
+                <h1>{t("common.gameSystem")}</h1>
+                <CustomeBreadcrumbs name={t("common.gameSystem")} />
                 <Stack sx={{ alignItems: "center" }}>
                     <SystemContainer>
                         <Image src={gameS} component="img" />

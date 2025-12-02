@@ -17,6 +17,9 @@ export const BackgroundImg = styled("img")(({ theme }) => ({
     [theme.breakpoints.up("md")]: {
         height: "650px",
     },
+    [theme.breakpoints.up("lg")]: {
+        height: "850px",
+    },
 }));
 
 export const BGTitle = styled(Typography)(({ theme }) => ({
@@ -38,6 +41,11 @@ export const BGTitle = styled(Typography)(({ theme }) => ({
     },
     [theme.breakpoints.up("md")]: {
         top: 290,
+        left: 80,
+        fontSize: 65,
+    },
+    [theme.breakpoints.up("md")]: {
+        top: 350,
         left: 80,
         fontSize: 65,
     },
@@ -63,15 +71,32 @@ export const BGSubTitle = styled(Typography)(({ theme }) => ({
         left: 80,
         fontSize: 24,
     },
+    [theme.breakpoints.up("md")]: {
+        top: 425,
+        left: 80,
+        fontSize: 24,
+    },
 }));
 
 export const ProjectContainer = styled("div")(({ theme }) => ({
     display: "flex",
-    margin: "1rem",
-    marginTop: '2rem',
+    marginTop: "2rem",
+    marginInline: "auto",
+    justifyContent: "center",
 
     [theme.breakpoints.down("sm")]: {
-        flexWrap: 'wrap'
+        marginTop: "1rem",
+        flexWrap: "wrap",
+    },
+}));
+
+export const InfoCardContainer = styled("div")(({ theme }) => ({
+    alignItems: "center",
+    rowGap: "40px",
+    p: "40px 20px 0px 20px",
+
+    [theme.breakpoints.down("sm")]: {
+        pt: "20px",
     },
 }));
 

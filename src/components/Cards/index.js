@@ -20,6 +20,7 @@ import {
 import { PROJECTS_PATH, RESUME_PATH } from "../../constants/paths";
 import CustomeTypography from "../CustomeTypography";
 import CustomeButton from "../../components/CustomeButton";
+import { useTranslation } from "react-i18next";
 
 export default function Cards({
     title,
@@ -34,6 +35,7 @@ export default function Cards({
 
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
+    const { t } = useTranslation();
 
     switch (variant) {
         case "home":
@@ -48,11 +50,11 @@ export default function Cards({
                     {matches ? <ButtonGroup>
                         <NavLink to={PROJECTS_PATH}>
                             <CustomeButton>
-                                Projects
+                                {t("common.projects")}
                             </CustomeButton>
                         </NavLink>
                         <NavLink to={RESUME_PATH}>
-                            <CustomeButton variant="outlined">Resume</CustomeButton>
+                            <CustomeButton variant="outlined">{t("common.resume")}</CustomeButton>
                         </NavLink>
                     </ButtonGroup> : null}
 

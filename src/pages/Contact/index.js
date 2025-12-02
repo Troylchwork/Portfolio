@@ -123,7 +123,6 @@ export default function Contact() {
                             gap: "10px",
                         }}
                     >
-                        <div>*Fake Sumbit</div>
                         <Button
                             type="submit"
                             variant="contained"

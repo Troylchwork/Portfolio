@@ -23,33 +23,53 @@ export const DesktopMenu = styled("div")(({ theme }) => ({
     flex: 1,
     padding: "40px",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: "center",
     [theme.breakpoints.down("sm")]: {
         display: "none",
     },
 }));
 
-export const LogoLink = styled("a")({});
+export const LogoLink = styled("a")({
+    textDecoration: "none", 
+    color: "inherit", 
+    outline: "none", 
+    cursor: "pointer",
+
+    "&:hover": {
+        textDecoration: "none",
+        color: "inherit",
+    },
+    "&:active": {
+        color: "inherit",
+    },
+    "&:visited": {
+        color: "inherit",
+    },
+    "&:focus": {
+        outline: "none",
+        boxShadow: "none",
+    },
+});
 
 export const LinkContainer = styled(Box)(({ directionC }) => ({
     display: "flex",
     flexDirection: directionC ? "column" : "row",
     columnGap: "10px",
     alignItems: "center",
-    position: 'relative'
+    position: "relative",
 }));
 
 export const LinkTitle = styled(Typography)(({ theme }) => ({
     fontSize: "1rem",
     fontWeight: "bold",
-    marginLeft: '25px',
+    marginLeft: "25px",
     lineHeight: 1.2,
 
     "&::before": {
         content: '""',
         position: "absolute",
-        left: '0px',
-        top: ' 5px',
+        left: "0px",
+        top: " 5px",
         width: "15px",
         height: "15px",
         backgroundColor: theme.primary,
@@ -59,8 +79,8 @@ export const LinkTitle = styled(Typography)(({ theme }) => ({
         "&::before": {
             content: '""',
             position: "absolute",
-            left: '0px',
-            top: '10px',
+            left: "0px",
+            top: "10px",
             width: "15px",
             height: "15px",
             backgroundColor: theme.primary,
@@ -69,10 +89,10 @@ export const LinkTitle = styled(Typography)(({ theme }) => ({
 }));
 
 export const LinkSubtitle = styled(Typography)(({ theme }) => ({
-    display: 'none',
+    display: "none",
 
     [theme.breakpoints.up("md")]: {
-        display: 'flex',
+        display: "flex",
     },
 
     [theme.breakpoints.down("sm")]: {
@@ -82,66 +102,69 @@ export const LinkSubtitle = styled(Typography)(({ theme }) => ({
 
 export const FooterContainer = styled(Box)({
     display: "flex",
-    width: '100vw',
+    width: "100vw",
+    background: "white",
     justifyContent: "space-between",
     textAlign: "center",
     zIndex: 2,
-    minHeight: '50px'
+    minHeight: "50px",
 });
 
-export const FooterTitle = styled("div")({
+export const FooterTitle = styled("span")({
+    display: "contents",
     fontSize: "18px",
     fontWeight: "bold",
     marginBottom: "10px",
+    alignItems: "center",
 });
 
-export const ScrollMenu = styled('div')(({ theme }) => ({
-    display: 'flex',
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
-    color: 'white',
-    marginLeft: 'auto',
-    marginRight: '2rem',
-    fontSize: '30px',
+export const ScrollMenu = styled("div")(({ theme }) => ({
+    display: "flex",
+    flexDirection: "row-reverse",
+    alignItems: "center",
+    color: "white",
+    marginLeft: "auto",
+    marginRight: "2rem",
+    fontSize: "30px",
     [theme.breakpoints.up("sm")]: {
-        display: 'none',
-    }
+        display: "none",
+    },
 }));
 
-export const ScrollMenuTitle = styled('div')(({ theme }) => ({
-    position: 'fixed',
-    backgroundColor: 'hsla(0, 0%, 0%, 0.8)',
+export const ScrollMenuTitle = styled("div")(({ theme }) => ({
+    position: "fixed",
+    backgroundColor: "hsla(0, 0%, 0%, 0.8)",
     top: 0,
-    width: '100vw',
-    height: '30vh',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
+    width: "100vw",
+    height: "30vh",
+    flexDirection: "column",
+    flexWrap: "wrap",
     zIndex: 1,
-    textalign: 'left',
+    textalign: "left",
     [theme.breakpoints.up("sm")]: {
-        display: 'none',
-    }
+        display: "none",
+    },
 }));
 
-export const MenuButton = styled('button')(({ theme }) => ({
-    color: 'rgb(255, 255, 255',
-    background: 'transparent',
-    border: '0px',
-    fontSize: '100%',
-    padding: '0px 5px',
+export const MenuButton = styled("button")(({ theme }) => ({
+    color: "rgb(255, 255, 255",
+    background: "transparent",
+    border: "0px",
+    fontSize: "100%",
+    padding: "0px 5px",
     [theme.breakpoints.up("sm")]: {
-        display: 'none',
-    }
+        display: "none",
+    },
 }));
 
 export const NavLinkText = styled(Typography)(({ theme }) => ({
     borderBottom: "1px solid white",
-    display: 'inline-block',
+    display: "inline-block",
 
     ":hover": {
         borderBottom: "1px solid black",
     },
     [theme.breakpoints.down("sm")]: {
-        color: 'white'
-    }
+        color: "white",
+    },
 }));

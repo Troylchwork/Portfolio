@@ -21,14 +21,14 @@ export default function Resume() {
 
     return (
         <Stack sx={{ background: "#F6F4F0", paddingBottom: "5rem", alignItems: 'center', '& *': { maxWidth: '1080px' } }}>
-            <CustomeTypography variant="h1_center">Resume</CustomeTypography>
+            <CustomeTypography variant="h1_center">{t("resume.resume")}</CustomeTypography>
             <ContentContainer>
                 <HeaderContainer>
-                    <CustomeTypography variant="h2">Work Experience</CustomeTypography>
+                    <CustomeTypography variant="h2">{t("resume.workExperience")}</CustomeTypography>
                     <Stack sx={{ justifyContent: "center" }}>
                         <a href="https://drive.google.com/u/1/uc?id=1zk2mLMBSRq_nuWBSM0KOpsKuByQQ_VTt&export=download">
                             <CustomeButton>
-                                Download CV
+                                {t("resume.downloadCV")}
                             </CustomeButton>
                         </a>
                     </Stack>
@@ -37,46 +37,46 @@ export default function Resume() {
                 <CardsContainer>
                     <Cards
                         title="2022 - 2024"
-                        subTitle="Game Developer"
+                        subTitle={t("common.gameDeveloper")}
                         companyName="Chaingate AI Limited"
                         variant="resume"
                     >
-                        {t("chaingateAiDersction")}
+                        {t("resume.chaingateAiDersction")}
                     </Cards>
                     <Cards
                         title="2019"
-                        subTitle="Internship"
+                        subTitle={t("common.internship")}
                         companyName="HULU Cultural Company"
                         variant="resume"
                     >
-                        {t("huluCulturalDersction")}
+                        {t("resume.huluCulturalDersction")}
                     </Cards>
                 </CardsContainer>
-                <CustomeTypography variant="h2">Educational</CustomeTypography>
+                <CustomeTypography variant="h2">{t("resume.educational")}</CustomeTypography>
                 <CardsContainer>
                     <Cards
                         title="2022"
-                        subTitle="Hong Kong Metropolitan University"
+                        subTitle={t("resume.HKMU")}
                         companyName="Bachelor of Arts with Honours in Computing and Interactive Entertainment "
                         variant="resume"
                     >
-                        {t("MetropolitanUniversity")}
+                        {t("resume.MetropolitanUniversity")}
                     </Cards>
                     <Cards
                         title="2020"
-                        subTitle="Hong Kong Institute of Vocational Education (Sha Tin)  "
+                        subTitle={t("resume.HKIVE")}
                         companyName="Higher Diploma in Multimedia"
                         variant="resume"
                     >
-                        {t("IVE")}
+                        {t("resume.IVEDersction")}
                     </Cards>
                 </CardsContainer>
-                <CustomeTypography variant="h2">Skills</CustomeTypography>
+                <CustomeTypography variant="h2">{t("resume.skills")}</CustomeTypography>
                 <Cards variant="resumeList">
-                    <CustomeTypography variant="h3">Technical Skills</CustomeTypography>
-                    <List>{Skillslist(t("technicalSkill"))}</List>
-                    <CustomeTypography variant="h3">Languages</CustomeTypography>
-                    <List>{Skillslist(t("languagesSkill"))}</List>
+                    <CustomeTypography variant="h3">{t("resume.technicalSkills")}</CustomeTypography>
+                    <List>{Skillslist(t("resume.technicalSkill"))}</List>
+                    <CustomeTypography variant="h3">{t("resume.languages")}</CustomeTypography>
+                    <List>{Skillslist(t("resume.languagesSkill"))}</List>
                 </Cards>
             </ContentContainer>
         </Stack>

@@ -17,8 +17,8 @@ export default function ProjectCard({ title, subTitle = "", path = "", img }) {
                 <CardMedia
                     component="img"
                     image={img}
-                    alt="img1"
-                    title="ABC"
+                    alt={title}
+                    title={title}
                     sx={{
                         transition: "all 0.35s ease-in-out",
                         height: "100%",
