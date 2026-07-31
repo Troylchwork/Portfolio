@@ -108,11 +108,12 @@ export const FooterContainer = styled(Box)({
     textAlign: "center",
     zIndex: 2,
     minHeight: "50px",
+    alignItems:"center",
 });
 
 export const FooterTitle = styled("span")({
     display: "contents",
-    fontSize: "18px",
+    fontSize: "16px",
     fontWeight: "bold",
     marginBottom: "10px",
     alignItems: "center",

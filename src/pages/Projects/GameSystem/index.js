@@ -1,4 +1,4 @@
-import { Stack, Typography, Divider } from "@mui/material";
+import { Stack, Typography, Divider, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CustomeBreadcrumbs from "../../../components/CustomeBreadcrumbs";
 import { gameS, preview2 } from "../../../assets/images";
@@ -8,6 +8,7 @@ export default function GameSystem() {
     const { t } = useTranslation();
     return (
         <Background>
+            <Container maxWidth="xl">
             <Stack sx={{ margin: "20px" }}>
                 <h1>{t("common.gameSystem")}</h1>
                 <CustomeBreadcrumbs name={t("common.gameSystem")} />
@@ -25,6 +26,7 @@ export default function GameSystem() {
                     </SystemContainer>
                 </Stack>
             </Stack>
+            </Container>
         </Background>
     );
 }

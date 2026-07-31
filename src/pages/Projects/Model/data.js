@@ -3,7 +3,7 @@ import { animation, background, bomb, bomb2, box, box2, building, building2, bur
 const itemData = [
     {
         key:"Environment",
-        i18Key:'projects.environment',
+        i18Key:'model.environment',
         title: "Environment",
         items: [
             {

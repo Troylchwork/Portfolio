@@ -14,6 +14,7 @@ import { Form, FormContainer, Header, Background, Control } from "./styles";
 import { useAlertContext } from "../../context/alertContext";
 import AlertDialog from "../../components/AlertDialog";
 import useSubmit from "../../hooks/useSubmit";
+import { background } from "../../assets/images";
 
 export default function Contact() {
     const { onOpen } = useAlertContext();
@@ -54,6 +55,7 @@ export default function Contact() {
     return (
         <Background>
             <Header>Let's talk</Header>
+            <Stack sx={{background:"white", width:"20px", height:"20px"}}></Stack>
             <FormContainer>
                 <Form
                     onSubmit={formik.handleSubmit}
