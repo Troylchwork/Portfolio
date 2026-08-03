@@ -36,7 +36,7 @@ export default function Contact() {
             message: Yup.string().min(5).required("Message is equired"),
         }),
         onSubmit: (values) => {
-            submit("", values);
+            submit("https://portfolio-backend-7x66.onrender.com/api/contact", values);
         },
     });
 
