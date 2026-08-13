@@ -50,7 +50,6 @@ export default {
         rebuildWebsiteDesc: `協助客戶使用 TypeScript + Next.js（Monorepo 架構）重新打造企業官網。新增多個頁面，並實現不同管理員權限功能。使用 Chakra UI、Recharts 等 UI 庫自訂組件，串接後端 API 實現表格、圖表等豐富功能。`,
         webGameDesc: `使用 Unity + Swift 將 AR 遊戲整合至公司官網，大幅提升用戶互動與參與度。同時協助同事開發多種商業模板（發票、採購單等），優化官網 UI，並與設計部門合作解決既有介面問題。`,
         webVoiceChatDesc: `使用 Photon 或 Vivox 實現遊戲內即時語音聊天功能，提升多人遊戲體驗。搭配 AWS GameLift、S3、EC2 確保遊戲與伺服器穩定連線。深入研究 WebGL 技術，評估將語音功能直接整合至網頁的可能性。`,
-        
     },
     gameSystem: {
         npc: `互動式 NPC 漫遊系統讓非玩家角色能在遊戲世界中自主移動。當玩家瞄準 NPC 時會出現外框高亮提示，按下「E」鍵即可開啟對話框，實現流暢的玩家與 NPC 互動，提升遊戲沉浸感。`,

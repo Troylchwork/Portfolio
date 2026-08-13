@@ -87,6 +87,8 @@ export const ProjectContainer = styled("div")(({ theme }) => ({
     [theme.breakpoints.down("sm")]: {
         marginTop: "1rem",
         flexWrap: "wrap",
+        // display: "gird",
+        // gridTemplateColumns: "1fr 1fr",
     },
 }));
 

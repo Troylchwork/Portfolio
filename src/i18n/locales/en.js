@@ -60,13 +60,12 @@ export default {
         webVoiceChatDesc: `Implemented in-game voice chat functionality using either Photon or Vivox, enhancing the multiplayer gaming experience. 
             Utilized AWS GameLift, S3, and EC2, ensuring connectivity between our game and the server.
             Researched WebGL technology extensively to assess the possibility of integrating voice chat into our website.`,
-        environment:`Environment`,
     },
     gameSystem: {
         npc: `The interactive NPC wandering feature enables non-player characters to move within the game world autonomously. When players point at an NPC, an outline highlights them, signaling interaction availability. Pressing 'E' triggers the NPC talk system, unveiling a dialog box for seamless communication, and fostering immersive player-NPC interactions within the game environment.`,
         preview: `The preview function in the game system enhances player interaction by enabling them to point at 3D items to outline them. Upon pointing, a button prompt appears, instructing players to press 'E' to activate the function. When 'E' is pressed, the highlighted item is enlarged on a big screen, allowing players to rotate and interact with the 3D item in detail, fostering a more immersive and engaging gameplay experience.`,
     },
     model:{
-
+        environment:`Environment`,
     }
 };

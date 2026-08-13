@@ -2,39 +2,39 @@ import { styled, Card, CardActionArea } from "@mui/material";
 
 export const CustomCard = styled(Card)(({ theme }) => ({
     borderRadius: "20px",
-    height:"350px",
+    // height: "350px",
     width: "350px",
+    aspectRatio: "1/1",
     margin: "0px 20px",
-    // flex: 1,
 
-    
-    [theme.breakpoints.down('md')]: {
-        height:"250px",
-        width:"250px",
+    [theme.breakpoints.down("md")]: {
+        // height: "250px",
+        width: "250px",
     },
 
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
         margin: "5px",
         borderRadius: "10px",
-        height:"200px",
-        width:"200px",
-        // flex: '1 0 50%'
+        // height: "200px",
+        width: "200px",
+        flex: "0 0 45%",
+        boxSizing: "border-box",
     },
 
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
         margin: "0px 10px",
-    }
+    },
 }));
 
 export const CustomCardActionArea = styled(CardActionArea)(({ theme }) => ({
-    height: '100%',
+    height: "100%",
 }));
 
 export const Title = styled("div")(({ theme }) => ({
     position: "absolute",
-    top: "65%",
+    bottom: "15%",
     width: "100%",
-    margin: "20px",
+    margin: "0px 40px",
     color: "white",
     fontSize: "24px",
     fontWeight: "bold",
@@ -42,20 +42,19 @@ export const Title = styled("div")(({ theme }) => ({
     transition: "all 0.35s ease-in-out",
     opacity: 1,
     zIndex: 1,
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-    
-    [theme.breakpoints.down('md')]: {
-        top: "55%",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+
+    [theme.breakpoints.down("md")]: {
+        bottom: "20%",
         fontSize: "20px",
         margin: "15px",
     },
 
-    [theme.breakpoints.down('sm')]: {
-        top: "45%",
+    [theme.breakpoints.down("sm")]: {
+        bottom: "15%",
         fontSize: "16px",
         margin: "10px",
     },
-
 }));
 
 export const SubTitle = styled("div")({
@@ -70,8 +69,7 @@ export const SubTitle = styled("div")({
 });
 
 export const GradientShadow = styled("div")({
-    background:
-        "linear-gradient(0deg, rgba(117, 205, 255, 0.8), rgba(0, 0, 0, 0))",
+    background: "linear-gradient(0deg, rgba(117, 205, 255, 0.8), rgba(0, 0, 0, 0))",
     position: "absolute",
     top: "0%",
     height: "100%",
