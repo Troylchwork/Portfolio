@@ -13,6 +13,7 @@ export default {
         gameDeveloper:`Game Developer`,
         frontendDeveloper:`Frontend Developer`,
         internship:`Internship`,
+        website:`Website`,
     },
     home:{
         title:'Hello',

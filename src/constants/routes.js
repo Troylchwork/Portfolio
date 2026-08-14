@@ -8,6 +8,7 @@ import {
     GAMESYSTEM_PATH,
     MORE_PATH,
     CONTACT_PATH,
+    WEBSITE_PATH,
     TEST_PATH
 } from "./paths";
 
@@ -19,6 +20,7 @@ const Model = lazy(() => import("../pages/Projects/Model"));
 const VisualEffect = lazy(() => import("../pages/Projects/VisualEffects"));
 const GameSystem = lazy(() => import("../pages/Projects/GameSystem"));
 const More = lazy(() => import("../pages/Projects/More"));
+const Website = lazy(() => import("../pages/Projects/Website"));
 const Test = lazy(() => import("../pages/Test"));
 
 const ROUTES = [
@@ -49,6 +51,10 @@ const ROUTES = [
     {
         path: GAMESYSTEM_PATH,
         component: GameSystem,
+    },
+    {
+        path: WEBSITE_PATH,
+        component: Website,
     },
     {
         path: MORE_PATH,

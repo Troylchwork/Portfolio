@@ -37,7 +37,7 @@ const rows = [
 ];
 
 const paginationModel = { page: 0, pageSize: 5 };
-export default function Test() {
+export default function Website() {
     return (
         <Stack sx={{ background: "#F6F4F0", paddingBottom: "5rem", alignItems: "center", "& *": { maxWidth: "1080px" } }}>
             <Paper sx={{ height: 400, width: "100%", mt: 4 }}>
