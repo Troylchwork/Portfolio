@@ -102,7 +102,8 @@ export const LinkSubtitle = styled(Typography)(({ theme }) => ({
 
 export const FooterContainer = styled(Box)({
     display: "flex",
-    width: "100vw",
+    width: "100%",
+    margin: "0 auto",
     background: "white",
     justifyContent: "space-between",
     textAlign: "center",

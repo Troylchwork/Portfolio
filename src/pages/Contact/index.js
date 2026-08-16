@@ -14,7 +14,7 @@ import { Form, FormContainer, Header, Background, Control } from "./styles";
 import { useAlertContext } from "../../context/alertContext";
 import AlertDialog from "../../components/AlertDialog";
 import useSubmit from "../../hooks/useSubmit";
-import { background } from "../../assets/images";
+import { userService } from "../../services/userService";
 
 export default function Contact() {
     const { onOpen } = useAlertContext();
@@ -35,8 +35,12 @@ export default function Contact() {
             subject: Yup.string().required("Subject is required"),
             message: Yup.string().min(5).required("Message is equired"),
         }),
-        onSubmit: (values) => {
-            submit("https://portfolio-backend-7x66.onrender.com/api/contact", values);
+        onSubmit: async (values) => {
+            // 如果 useSubmit 支援傳入 Promise/Function，可直接呼叫 contactService：
+            // await submit(() => contactService.submitContact(values));
+            
+            // 若 useSubmit 僅接收 (endpoint, values)，請傳入相對路徑：
+            submit("/contact", values);
         },
     });
 
@@ -48,8 +52,8 @@ export default function Contact() {
                 response.subject,
                 response.message
             );
+            formik.resetForm();
         }
-        formik.resetForm();
     }, [response]);
 
     return (
@@ -57,9 +61,7 @@ export default function Contact() {
             <Header>Let's talk</Header>
             <Stack sx={{background:"white", width:"20px", height:"20px"}}></Stack>
             <FormContainer>
-                <Form
-                    onSubmit={formik.handleSubmit}
-                >
+                <Form onSubmit={formik.handleSubmit}>
                     <Control
                         variant="standard"
                         error={formik.errors.name && formik.touched.name}
@@ -67,9 +69,7 @@ export default function Contact() {
                         <InputLabel htmlFor="name">Name</InputLabel>
                         <Input id="name" {...formik.getFieldProps("name")} />
                         {formik.touched.name && formik.errors.name ? (
-                            <FormHelperText>
-                                {formik.errors.name}
-                            </FormHelperText>
+                            <FormHelperText>{formik.errors.name}</FormHelperText>
                         ) : null}
                     </Control>
                     <Control
@@ -79,9 +79,7 @@ export default function Contact() {
                         <InputLabel htmlFor="email">Email</InputLabel>
                         <Input id="email" {...formik.getFieldProps("email")} />
                         {formik.touched.email && formik.errors.email ? (
-                            <FormHelperText>
-                                {formik.errors.email}
-                            </FormHelperText>
+                            <FormHelperText>{formik.errors.email}</FormHelperText>
                         ) : null}
                     </Control>
                     <Control
@@ -89,14 +87,9 @@ export default function Contact() {
                         error={formik.errors.subject && formik.touched.subject}
                     >
                         <InputLabel htmlFor="subject">Subject</InputLabel>
-                        <Input
-                            id="subject"
-                            {...formik.getFieldProps("subject")}
-                        />
+                        <Input id="subject" {...formik.getFieldProps("subject")} />
                         {formik.touched.subject && formik.errors.subject ? (
-                            <FormHelperText>
-                                {formik.errors.subject}
-                            </FormHelperText>
+                            <FormHelperText>{formik.errors.subject}</FormHelperText>
                         ) : null}
                     </Control>
                     <Control
@@ -112,9 +105,7 @@ export default function Contact() {
                             {...formik.getFieldProps("message")}
                         />
                         {formik.touched.message && formik.errors.message ? (
-                            <FormHelperText>
-                                {formik.errors.message}
-                            </FormHelperText>
+                            <FormHelperText>{formik.errors.message}</FormHelperText>
                         ) : null}
                     </Control>
 
@@ -130,11 +121,7 @@ export default function Contact() {
                             variant="contained"
                             sx={{ height: "60px", width: "10rem" }}
                             disabled={isLoading}
-                            startIcon={
-                                isLoading ? (
-                                    <CircularProgress size={24} />
-                                ) : null
-                            }
+                            startIcon={isLoading ? <CircularProgress size={24} /> : null}
                         >
                             {isLoading ? "" : "Submit"}
                         </Button>
