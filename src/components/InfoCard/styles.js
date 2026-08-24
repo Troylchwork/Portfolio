@@ -1,7 +1,8 @@
-
 import { styled, Card, CardMedia, Box, Stack } from "@mui/material";
 
-export const CustomCard = styled(Card)(({ reverse, theme }) => ({
+export const CustomCard = styled(Card, {
+    shouldForwardProp: (prop) => prop !== "reverse",
+})(({ reverse, theme }) => ({
     display: "flex",
     margin: "20px",
     borderRadius: "10px",
@@ -26,7 +27,9 @@ export const CustomCardMedia = styled(CardMedia)(({ theme }) => ({
     },
 }));
 
-export const CardCotent = styled(Box)(({ textAlignR, theme }) => ({
+export const CardCotent = styled(Box, {
+    shouldForwardProp: (prop) => prop !== "textAlignR",
+})(({ textAlignR, theme }) => ({
     width: "50%",
     textAlign: textAlignR ? "end" : "start",
 
@@ -45,13 +48,15 @@ export const TitleContainer = styled(Box)(({ theme }) => ({
     },
 }));
 
-export const TitleContainerRight = styled(Box)(({ justifyContentR, theme }) => ({
+export const TitleContainerRight = styled(Box, {
+    shouldForwardProp: (prop) => prop !== "justifyContentR",
+})(({ justifyContentR, theme }) => ({
     display: "flex",
     gap: "20px",
     paddingTop: "40px",
     justifyContent: justifyContentR ? "start" : "end",
     flexDirection: justifyContentR ? "row-reverse" : "row",
-    textAlign: justifyContentR? "left" : "right",
+    textAlign: justifyContentR ? "left" : "right",
     [theme.breakpoints.down("md")]: {
         paddingTop: "20px",
     },
@@ -74,10 +79,9 @@ export const SubTitle = styled("div")({
 });
 
 export const CardDesc = styled(Stack)(({ theme }) => ({
-    margin:'20px',
+    margin: "20px",
 
     [theme.breakpoints.down("md")]: {
         width: "100%",
     },
 }));
-

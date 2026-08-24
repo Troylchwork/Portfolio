@@ -42,7 +42,7 @@ function Header() {
                             <LinkContainer>
                                 <LinkTitle>
                                     Troy Leung <br />
-                                    <Box component="div" sx={{ display: { sm: "inline", md: "none" }, fontSize: "12px" }}>
+                                    <Box component="span" sx={{ display: { sm: "inline", md: "none" }, fontSize: "12px" }}>
                                         {t("common.jobTitleM")}
                                     </Box>
                                 </LinkTitle>
@@ -64,7 +64,7 @@ function Header() {
                         <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} transformOrigin={{ vertical: "top", horizontal: "right" }} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu} sx={{ display: { xs: "block", md: "none" } }}>
                             {pages.map((page) => (
                                 <MenuItem key={page.name} onClick={handleCloseNavMenu} sx={{ px: 4 }}>
-                                    <NavLink to={page.path}>
+                                    <NavLink key={page.path} to={page.path}>
                                         <Typography>{page.name}</Typography>
                                     </NavLink>
                                 </MenuItem>
@@ -75,7 +75,7 @@ function Header() {
                     {/* pc menu */}
                     <Box sx={{ flexGrow: 1, justifyContent: "flex-end", columnGap: "2rem", paddingRight: "10px", alignItems: "flex-end", display: { xs: "none", sm: "flex" } }}>
                         {pages.map((page) => (
-                            <NavLink to={page.path}>
+                            <NavLink key={page.path} to={page.path}>
                                 <NavLinkText>{page.name}</NavLinkText>
                             </NavLink>
                         ))}
